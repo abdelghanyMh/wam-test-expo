@@ -6,17 +6,16 @@ export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <Link href="/EmailSignup" asChild>
+      <Link href="/Login" asChild>
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Email ou telephone</Text>
         </TouchableOpacity>
       </Link>
-      <TouchableOpacity
-        style={styles.button}
-        // onPress={() => navigation.navigate("SignupForm")}
-      >
-        <Text style={styles.buttonText}>Inscrivez-vous</Text>
-      </TouchableOpacity>
+      <Link href="/Signup" asChild>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Inscrivez-vous</Text>
+        </TouchableOpacity>
+      </Link>
 
       <Text style={styles.orText}>ou</Text>
 
