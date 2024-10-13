@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import axios from "axios";
 
-const API_URL = "http://192.168.238.6:3000/chat"; // Replace with your actual API URL
+const API_URL = process.env.EXPO_PUBLIC_API_URL
 
 const Chat = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -18,7 +18,7 @@ const Chat = () => {
 
   const makeApiCall = async (message) => {
     try {
-      const response = await axios.post(`${API_URL}/`, { message });
+      const response = await axios.post(`${API_URL}/chat`, { message });
 
       setSuggestions(response.data.suggestions);
       const newMessage = { user: message, ai: response.data.message };

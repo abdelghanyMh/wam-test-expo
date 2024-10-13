@@ -11,7 +11,7 @@ import {
   StyleSheet,
 } from "react-native";
 import { router } from "expo-router";
-const API_URL = "http://192.168.251.6:3000"; // Replace with your API URL
+const API_URL = process.env.EXPO_PUBLIC_API_URL; // Replace with your API URL
 
 const LoginScreen = () => {
   const handleLogin = async (values) => {
