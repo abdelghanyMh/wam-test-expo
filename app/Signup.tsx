@@ -15,14 +15,12 @@ import {
   statusCodes,
 } from "@react-native-google-signin/google-signin";
 import { router } from "expo-router";
+const API_URL = process.env.EXPO_PUBLIC_API_URL; // Replace with your API URL
 
 const SignupScreen = () => {
   const handleSignup = async (values) => {
     try {
-      const response = await axios.post(
-        `http://192.168.251.6:3000/auth/signup`,
-        values
-      );
+      const response = await axios.post(`${API_URL}/auth/signup`, values);
       Alert.alert("Success", "Account created successfully");
       router.navigate("/Login");
     } catch (error) {
